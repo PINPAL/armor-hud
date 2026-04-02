@@ -42,5 +42,6 @@
   "armorhud.option.percentage": "Percentage",
   "armorhud.keybind.toggle": "Toggle Armor Hud",
   "armorhud.keybind.toggle.msg": "Armor Hud toggled",
-  "armorhud.subtitle.armorBreaking": "Armor Breaking"
+  "armorhud.subtitle.armorBreaking": "Armor Breaking",
+  "armorhud.option.resourcePack": "Resource Pack"
 }

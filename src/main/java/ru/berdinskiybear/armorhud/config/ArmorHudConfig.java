@@ -102,6 +102,7 @@ public class ArmorHudConfig implements Serializable {
         HOTBAR("hotbar", "armorhud.option.hotbar"),
         ROUNDED_CORNERS("rounded_corners", "armorhud.option.roundedCorners"),
         ROUNDED("rounded", "armorhud.option.rounded"),
+	    RESOURCE_PACK("resource_pack", "armorhud.option.resourcePack"),
         NONE("none", "armorhud.option.none");
 
         private final String name;

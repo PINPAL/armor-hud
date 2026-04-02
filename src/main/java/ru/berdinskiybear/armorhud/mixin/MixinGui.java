@@ -40,6 +40,9 @@ public abstract class MixinGui {
     @Unique
     private static final Identifier WARNING_TEXTURE = Identifier.fromNamespaceAndPath(MOD_ID, "warn.png");
 
+	@Unique
+	private static final Identifier CUSTOM_HOTBAR_SPRITE = Identifier.fromNamespaceAndPath(MOD_ID, "hud/armor_bar");
+
     @Shadow
     protected abstract void renderSlot(GuiGraphics graphics, int x, int y, DeltaTracker tickCounter, Player player, ItemStack stack, int seed);
 
@@ -97,6 +100,10 @@ public abstract class MixinGui {
         int color = ArmorHudMod.getBedrockifyCompat() != null ? ARGB.white(ArmorHudMod.getBedrockifyCompat().hudOpacity()) : 0xFFFFFFFF;
 
         switch (config.getStyle()) {
+	        case RESOURCE_PACK -> {
+		        graphics.blitSprite(RenderPipelines.GUI_TEXTURED, CUSTOM_HOTBAR_SPRITE, 82, 22, 0, 0, 0, 0, textureWidth - 3, SIZE, color);
+		        graphics.blitSprite(RenderPipelines.GUI_TEXTURED, CUSTOM_HOTBAR_SPRITE, 82, 22, 82 - 3, 0, textureWidth - 3, 0, 3, SIZE, color);
+	        }
             case HOTBAR -> {
                 graphics.blitSprite(RenderPipelines.GUI_TEXTURED, HOTBAR_SPRITE, 182, 22, 0, 0, 0, 0, textureWidth - 3, SIZE, color);
                 graphics.blitSprite(RenderPipelines.GUI_TEXTURED, HOTBAR_SPRITE, 182, 22, 182 - 3, 0, textureWidth - 3, 0, 3, SIZE, color);
